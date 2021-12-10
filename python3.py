@@ -7,10 +7,13 @@ def File(filename):
     r = float(inp.readline())
     inp.close()
 
-    if(((xa-xo)**2+(ya-yo)**2<r) and ((xb-xo)**2+(yb-yo)**2<r)):
+    if(((xa-xo)**2+(ya-yo)**2<r**2) and ((xb-xo)**2+(yb-yo)**2<r**2)):
         return 0
-
-    if(((xa-xo)**2+(ya-yo)**2<r) and ((xb-xo)**2+(yb-yo)**2>r)):
+#----
+    if(((xa-xo)**2+(ya-yo)**2<r**2) and ((xb-xo)**2+(yb-yo)**2>r**2)):
+        return 1
+    
+    if(((xb-xo)**2+(yb-yo)**2<r**2) and ((xa-xo)**2+(ya-yo)**2>r**2)):
         return 1
 
     #if(((xa-xo)**2+(ya-yo)**2==r) and ((xb-xo)**2+(yb-yo)**2>r)):
@@ -19,17 +22,17 @@ def File(filename):
     #if(((xa-xo)**2+(ya-yo)**2>r) and ((xb-xo)**2+(yb-yo)**2==r)):
     #    return 1
 #-----
-    if(((xa-xo)**2+(ya-yo)**2==r) and ((xb-xo)**2+(yb-yo)**2<r)):
+    if(((xa-xo)**2+(ya-yo)**2==r**2) and ((xb-xo)**2+(yb-yo)**2<r**2)):
         return 1
 
-    if(((xa-xo)**2+(ya-yo)**2<r) and ((xb-xo)**2+(yb-yo)**2==r)):
+    if(((xa-xo)**2+(ya-yo)**2<r**2) and ((xb-xo)**2+(yb-yo)**2==r**2)):
         return 1
 
-    if(((xa-xo)**2+(ya-yo)**2==r) and ((xb-xo)**2+(yb-yo)**2==r)):
+    if(((xa-xo)**2+(ya-yo)**2==r**2) and ((xb-xo)**2+(yb-yo)**2==r**2)):
         return 2
 #-----
 
-    if(((xa-xo)**2+(ya-yo)**2==r) and ((xb-xo)**2+(yb-yo)**2>r)):
+    if(((xa-xo)**2+(ya-yo)**2==r**2) and ((xb-xo)**2+(yb-yo)**2>r**2)):
         
         if(ya>yo):
             if((xa-xo)*(xb-xa)+(ya-yo)*(yb-ya)>0):
@@ -39,7 +42,7 @@ def File(filename):
             if((xa-xo)*(xb-xa)+(ya-yo)*(yb-ya)<0):
                 return 1
 
-    if(((xb-xo)**2+(yb-yo)**2==r) and ((xa-xo)**2+(ya-yo)**2>r)):
+    if(((xb-xo)**2+(yb-yo)**2==r**2) and ((xa-xo)**2+(ya-yo)**2>r**2)):
         
         if(yb>yo):
             if((xb-xo)*(xa-xb)+(yb-yo)*(ya-yb)>0):
