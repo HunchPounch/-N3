@@ -34,11 +34,11 @@ def File(filename):
 
     if(((xa-xo)**2+(ya-yo)**2==r**2) and ((xb-xo)**2+(yb-yo)**2>r**2)):
         
-        if(ya>yo):
+        if(ya>=yo):
             if((xa-xo)*(xb-xa)+(ya-yo)*(yb-ya)>0):
                 return 1
 
-        if(ya<yo):
+        if(ya<=yo):
             if((xa-xo)*(xb-xa)+(ya-yo)*(yb-ya)<0):
                 return 1
 
